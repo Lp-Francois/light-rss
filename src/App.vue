@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Rss/>
+    <!--<img alt="Vue logo" src="./assets/logo.png">-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Rss from './components/Rss'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Rss
   }
 }
 </script>
@@ -24,5 +24,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+img {
+	margin-top: 200px;
 }
 </style>

@@ -1,29 +1,18 @@
 # light-rss
 
+A simple, light and serverless RSS reader.
+
 ## Project setup
+```
+git clone *url*
+```
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+_Modify the feeds.json with the feeds you like, then run the project
+
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
