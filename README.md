@@ -16,3 +16,13 @@ _Modify the feeds.json with the feeds you like, then run the project_
 ```
 npm run serve
 ```
+
+## To-do
+
+* remove spectre, keep only custom css
+* add filter on date
+* create a post component
+* redesign
+* add dark theme
+* add header
+* add infinite scroll
