@@ -1,41 +1,61 @@
 <template>
-	<div class="rss">
-		<div v-for="post in posts" class="card">
-			<h2>{{ post.title }}</h2>
-			<div v-html="post.description"></div>
-			<a :href="post.url">{{ post.url }}</a>
+	<div class="rss columns">
+		<div class="column pt-0">
+			<div class="hero hero-sm bg-dark">
+				<div class="hero-body">
+					<h2>Feed names</h2>
+					<ul v-for="name in feedNames">
+						<li>{{ name }}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div v-show="loading" class="column col-12 centered loading loading-lg"></div>
+		<div v-for="post in sortedPosts" class="column col-12">
+			<div class="card">
+				<div class="card-header">
+					<div class="card-title">
+						{{ post.title }}
+					</div>
+				</div>
+				<div class="card-body">
+					<div v-html="post.description" class="card-body"></div>
+					<a :href="post.url">{{ post.url }}</a>
+				</div>
+				<div class="card-footer">
+					{{post.pubDate}}
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import feeds from '../../feeds.json'
+
 export default {
 	name: 'Rss',
 	data() {
 		return {
-			data: {
-				title: 'Loading',
-				url :'',
-			},
 			proxyUrl: 'https://cors-anywhere.herokuapp.com/',
-			urlFeedList: [
-				'https://korben.info/feed',
-				'https://hacks.mozilla.org/feed',
-			],
-			posts: [
-				{
-					
-				}
-			]
+			urlFeedList: feeds.urls,
+			posts: [],
+			loading: true,
+			feedNames: []
 		}
 	},
 	created: function() {
 		//get JSON with URLs feed
 
 		//loop through each URL
-
-			//rssFetch
-		this.rssFetch(this.proxyUrl+'https://korben.info/feed')
+		this.urlFeedList.forEach((url)=>{
+			this.rssFetch(this.proxyUrl+url)
+		})
+	},
+	computed: {
+		sortedPosts() {
+            return this.posts;    
+        }
 	},
 	methods: {
 		rssFetch: function (url) {
@@ -46,17 +66,18 @@ export default {
 			.then((data) => {
 				const doc = new DOMParser().parseFromString(data, "application/xml");
 
-				this.data.title = doc.getElementsByTagName('description')[0].textContent
-				this.data.url = doc.getElementsByTagName('link')[0].textContent
+				this.feedNames.push(doc.querySelector('title').textContent)
 
 				doc.querySelectorAll('item').forEach((item) => {
 					return this.posts.push({
 				        title: item.querySelector('title').textContent,
 				        description: item.querySelector('description').textContent,
 				        url: item.querySelector('link').textContent,
+				        pubDate: item.querySelector('pubDate').textContent,
 			      	})
 				})
 			})
+			.then(()=>(this.loading = false))
 			.catch(error => console.error(error))
 		},
 	},
@@ -64,5 +85,21 @@ export default {
 </script>
 
 <style scoped>
-.rss {height: 100vh;}
+.card {
+	border: 0;
+	box-shadow: 0 .25rem 1rem rgba(48,55,66,.15);
+	height: 100%;
+}
+
+.column {
+	padding: .4rem;
+}
+
+.loading {
+	margin-top: 30px;
+}
+
+.pt-O {
+	padding-top: 0;
+}
 </style>

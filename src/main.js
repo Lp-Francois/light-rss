@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import '@modules/spectre.css/dist/spectre.min.css'
 import './../node_modules/spectre.css/dist/spectre.min.css';
 
 
