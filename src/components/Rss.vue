@@ -21,7 +21,7 @@
 				</div>
 				<div class="card-body">
 					<div v-html="post.description" class="card-body"></div>
-					<a :href="post.url">{{ post.url }}</a>
+					<a :href="post.url" target="_blank">{{ post.url }}</a>
 				</div>
 				<div class="card-footer">
 					{{post.pubDate}}
@@ -46,9 +46,6 @@ export default {
 		}
 	},
 	created: function() {
-		//get JSON with URLs feed
-
-		//loop through each URL
 		this.urlFeedList.forEach((url)=>{
 			this.rssFetch(this.proxyUrl+url)
 		})
@@ -82,7 +79,6 @@ export default {
 				})
 			})
 			.then(()=>(this.loading = false))
-			.catch(error => console.error(error))
 		},
 	},
 }

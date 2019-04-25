@@ -29,12 +29,12 @@ Note: V2 incoming soon ;)
 
 ## To-do
 
-* remove spectre, keep only custom css (with grid)
-* add filter on date
-* create a post component
-* redesign
-* add dark theme
-* add header
-* add infinite scroll
-* open links in new tab
-* On click on posts, change design to look like viewed
+[ ] remove spectre, keep only custom css (with grid)
+[x] sort by dates
+[ ] create a post component
+[ ] redesign
+[ ] add dark theme
+[ ] add header
+[ ] add infinite scroll
+[x] open links in new tab
+[ ] On click on posts, change design to look like viewed
