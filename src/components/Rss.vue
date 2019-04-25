@@ -14,18 +14,14 @@
 		<div v-show="loading" class="column col-12 centered loading loading-lg"></div>
 		<div v-for="post in sortedPosts" class="column col-12">
 			<div class="card">
-				<div class="card-header">
-					<div class="card-title">
-						{{ post.title }}
-					</div>
-				</div>
+						
 				<div class="card-body">
-					<div v-html="post.description" class="card-body"></div>
-					<a :href="post.url" target="_blank">{{ post.url }}</a>
+					<h3>{{ post.title }}</h3>
+					<i>{{post.pubDate}}</i>
+					<div v-html="post.description"></div>
+					<a :href="post.url" target="_blank">Read more</a>
 				</div>
-				<div class="card-footer">
-					{{post.pubDate}}
-				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -87,6 +83,7 @@ export default {
 <style scoped>
 .card {
 	border: 0;
+	background-color: var(--secondary-bg-color);
 	box-shadow: 0 .25rem 1rem rgba(48,55,66,.15);
 	height: 100%;
 }
