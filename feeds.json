@@ -2,6 +2,7 @@
 	"urls": [
 		"https://korben.info/feed",
 		"https://hacks.mozilla.org/feed",
-		"https://feeds.feedburner.com/TheHackersNews?format=xml"
+		"https://feeds.feedburner.com/TheHackersNews?format=xml",
+		"https://www.bleepingcomputer.com/feed/"
 	]
 }

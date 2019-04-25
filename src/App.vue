@@ -2,17 +2,15 @@
 	<div id="app" data-theme="light">
 		<header class="header">
 			<nav class="container grid-lg nav-header">
-				<a href="/">
+				<a href="https://github.com/AsterYujano/light-rss">
 					<img class="logo" alt="logo" src="./assets/vue-rss.png">
 				</a>
-				<h1 class="title">Light-rss</h1>
+				<h4 class="title">Light-rss</h4>
 			</nav>
+		</header>
 
-		</header>		
 		<div class="container grid-lg">
-
 			<Rss/>
-
 		</div>
 
 	</div>
@@ -63,7 +61,7 @@ export default {
 }
 
 .header {
-	height: 67px;
+	height: 45px;
 	background-color: var(--secondary-bg-color);
 	margin-bottom: 15px;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
@@ -81,10 +79,14 @@ export default {
 }
 
 .logo {
-	width: 50px;
-	height: ;: 50px;
+	width: 30px;
+	height: 30px;
 	margin-right: 15px;
 	margin-top: 7px;
+}
+
+a {
+	color: var(--primary-color);
 }
 
 </style>

@@ -1,5 +1,7 @@
 # light-rss
 
+![Our Logo](https://github.com/AsterYujano/light-rss/blob/master/src/assets/vue-rss.png)
+
 A simple, light and serverless RSS reader.
 
 [Demo](https://light-rss.netlify.com)

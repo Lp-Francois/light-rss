@@ -1,28 +1,19 @@
 <template>
 	<div class="rss columns">
-		<div class="column pt-0">
-			<div class="hero hero-sm bg-dark">
-				<div class="hero-body">
-					<h2>Feed names</h2>
-					<ul v-for="name in feedNames">
-						<li>{{ name }}</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
 		<div v-show="loading" class="column col-12 centered loading loading-lg"></div>
 		<div v-for="post in sortedPosts" class="column col-12">
-			<div class="card">
-						
-				<div class="card-body">
-					<h3>{{ post.title }}</h3>
-					<i>{{post.pubDate}}</i>
-					<div v-html="post.description"></div>
-					<a :href="post.url" target="_blank">Read more</a>
-				</div>
-				
-			</div>
+			
+			<div class="post">
+				<a class="title-link" :href="post.postUrl" target="_blank">
+					<strong>{{ post.title }}</strong>
+				</a>
+				<i> ({{ post.from }})</i>
+				<br>
+				<i class="i-date">{{ post.pubDate }}</i>
+				<br>
+				<p v-html="post.description"></p>
+				<a :href="post.postUrl" target="_blank">Read more</a>
+			</div>	
 		</div>
 	</div>
 </template>
@@ -38,7 +29,6 @@ export default {
 			urlFeedList: feeds.urls,
 			posts: [],
 			loading: true,
-			feedNames: []
 		}
 	},
 	created: function() {
@@ -63,13 +53,14 @@ export default {
 			.then((data) => {
 				const doc = new DOMParser().parseFromString(data, "application/xml");
 
-				this.feedNames.push(doc.querySelector('title').textContent)
+				const from = doc.querySelector('title').textContent
 
 				doc.querySelectorAll('item').forEach((item) => {
 					return this.posts.push({
 				        title: item.querySelector('title').textContent,
+				        from: from,
+				        postUrl: item.querySelector('link').textContent,
 				        description: item.querySelector('description').textContent,
-				        url: item.querySelector('link').textContent,
 				        pubDate: item.querySelector('pubDate').textContent,
 			      	})
 				})
@@ -80,7 +71,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .card {
 	border: 0;
 	background-color: var(--secondary-bg-color);
@@ -99,4 +90,17 @@ export default {
 .pt-O {
 	padding-top: 0;
 }
+
+.post p {
+	margin-bottom: 0;
+}
+
+.post .i-date {
+	font-size: .6rem;
+}
+
+.title-link, .title-link:hover {
+	color: var(--font-color)!important;
+}
+
 </style>
