@@ -2,7 +2,7 @@
 
 A simple, light and serverless RSS reader.
 
-[Demo](light-rss.netlify.com)
+[Demo](https://light-rss.netlify.com)
 
 ## Project setup
 ```
