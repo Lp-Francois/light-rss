@@ -10,6 +10,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div v-show="loading" class="column col-12 centered loading loading-lg"></div>
 		<div v-for="post in sortedPosts" class="column col-12">
 			<div class="card">
@@ -53,9 +54,12 @@ export default {
 		})
 	},
 	computed: {
-		sortedPosts() {
-            return this.posts;    
-        }
+	    sortedPosts: function() {
+	        this.posts.sort( ( a, b) => {
+	            return new Date(b.pubDate) - new Date(a.pubDate);
+	        });
+	        return this.posts;
+	    }
 	},
 	methods: {
 		rssFetch: function (url) {
