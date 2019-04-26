@@ -90,5 +90,4 @@ export default {
 .pt-O {
 	padding-top: 0;
 }
-
 </style>

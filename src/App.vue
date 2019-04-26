@@ -36,6 +36,7 @@ export default {
     --primary-color: #42b883;
     --secondary-color: #35495e;
     --font-color: #424242;
+    --font-color-visited: #828282;
     --bg-color: #F4F4F4;
     --secondary-bg-color: #F4F4F4;
     --heading-color: #292922;
@@ -45,6 +46,7 @@ export default {
     --primary-color: #42b883;
     --secondary-color: #818cab;
     --font-color: #e1e1ff;
+    --font-color-visited: #f5f5ff;
     --bg-color: #181E24;
     --secondary-bg-color: #1F2831;
     --heading-color: #818cab;

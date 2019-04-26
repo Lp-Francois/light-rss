@@ -30,9 +30,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .post p {
 	margin-bottom: 0;
+	font-size: .7rem;
 }
 
 .post .i-date {
@@ -40,6 +41,10 @@ export default {
 }
 
 .title-link, .title-link:hover {
-	color: var(--font-color)!important;
+	color: var(--font-color);
+}
+
+a:visited {
+	color: var(--font-color-visited);
 }
 </style>
