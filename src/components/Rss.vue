@@ -1,28 +1,28 @@
 <template>
 	<div class="rss columns">
 		<div v-show="loading" class="column col-12 centered loading loading-lg"></div>
-		<div v-for="post in sortedPosts" class="column col-12">
-			
-			<div class="post">
-				<a class="title-link" :href="post.postUrl" target="_blank">
-					<strong>{{ post.title }}</strong>
-				</a>
-				<i> ({{ post.from }})</i>
-				<br>
-				<i class="i-date">{{ post.pubDate }}</i>
-				<br>
-				<p v-html="post.description"></p>
-				<a :href="post.postUrl" target="_blank">Read more</a>
-			</div>	
+		
+		<div class="column col-12" v-for="post in sortedPosts" >
+			<Post 
+			:postUrl=post.postUrl 
+			:title=post.title
+			:from=post.from
+			:description=post.description
+			:pubDate=post.pubDate
+			/>
 		</div>
 	</div>
 </template>
 
 <script>
+import Post from './Post'
 import feeds from '../../feeds.json'
 
 export default {
 	name: 'Rss',
+	components: {
+		Post
+	},
 	data() {
 		return {
 			proxyUrl: 'https://cors-anywhere.herokuapp.com/',
@@ -89,18 +89,6 @@ export default {
 
 .pt-O {
 	padding-top: 0;
-}
-
-.post p {
-	margin-bottom: 0;
-}
-
-.post .i-date {
-	font-size: .6rem;
-}
-
-.title-link, .title-link:hover {
-	color: var(--font-color)!important;
 }
 
 </style>
