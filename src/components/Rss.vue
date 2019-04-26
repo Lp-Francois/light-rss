@@ -46,7 +46,7 @@ export default {
 	},
 	methods: {
 		rssFetch: function (url) {
-			fetch(url)
+			return fetch(url)
 			.then((response) => {
 				return response.text()
 			})
@@ -60,7 +60,7 @@ export default {
 				        title: item.querySelector('title').textContent,
 				        from: from,
 				        postUrl: item.querySelector('link').textContent,
-				        description: item.querySelector('description').textContent,
+				        description: item.querySelector('description').textContent.replace(/<img[^>]*>/g,""),
 				        pubDate: item.querySelector('pubDate').textContent,
 			      	})
 				})
