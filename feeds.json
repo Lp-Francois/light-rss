@@ -4,7 +4,6 @@
 		"https://hacks.mozilla.org/feed",
 		"https://feeds.feedburner.com/TheHackersNews?format=xml",
 		"https://www.bleepingcomputer.com/feed/",
-		"https://feeds.feedburner.com/Securityweek?format=xml",
 		"https://feeds.feedburner.com/CiscoBlogSecurity?format=xml"
 	]
 }
