@@ -60,7 +60,7 @@ export default {
 				        title: item.querySelector('title').textContent,
 				        from: from,
 				        postUrl: item.querySelector('link').textContent,
-				        description: item.querySelector('description').textContent.replace(/<img[^>]*>/g,""),
+				        description: item.querySelector('description').textContent.replace(/<img[^>]*>/g,"").replace(/h[0-9]/g, "span"),
 				        pubDate: item.querySelector('pubDate').textContent,
 			      	})
 				})

@@ -1,19 +1,17 @@
 <template>
-	<div>
-		<header class="header">
-			<nav class="container grid-lg nav-header">
-				<a href="https://github.com/AsterYujano/light-rss">
-					<img class="logo" alt="logo" src=".././assets/vue-rss.png">
-				</a>
-				<h4 class="title">Light-rss</h4>
+	<header class="header">
+		<nav class="container grid-lg nav-header">
+			<a href="https://github.com/AsterYujano/light-rss">
+				<img class="logo" alt="logo" src=".././assets/vue-rss.png">
+			</a>
+			<h4 class="title">Light-rss</h4>
 
-				<label class="switch" v-on:click="toggle">
-					<input type="checkbox">
-					<span class="slider round"></span>
-				</label>
-			</nav>
-		</header>
-	</div>
+			<label class="switch" v-on:click="toggle">
+				<input type="checkbox">
+				<span class="slider round"></span>
+			</label>
+		</nav>
+	</header>
 </template>
 
 <script>

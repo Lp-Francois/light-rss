@@ -1,24 +1,26 @@
 <template>
 	<div id="app" data-theme="light">
-		<div>
-			<Header/>
-		</div>
+		<Header/>
 
 		<div class="container grid-lg">
 			<Rss/>
 		</div>
+
+		<Footer/>
 	</div>
 </template>
 
 <script>
 import Header from './components/Header.vue';
 import Rss from './components/Rss.vue';
+import Footer from './components/Footer.vue';
 
 export default {
 	name: 'app',
 	components: {
 		Header,
 		Rss,
+		Footer
 	},
 }
 </script>
