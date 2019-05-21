@@ -57,8 +57,8 @@ export default {
 
 				doc.querySelectorAll('item').forEach((item) => {
 					let url = item.querySelector('link').textContent
-					const test = url.indexOf('?') > -1 ? console.log('get') : console.log('')
 					url = url.indexOf('?') > -1 ? url.split('?')[0] : url
+					url = url.replace('&amp;', '&');
 
 					return this.posts.push({
 						title: item.querySelector('title').textContent,
