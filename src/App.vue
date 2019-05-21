@@ -32,7 +32,7 @@ export default {
     --font-color: #424242;
     --font-color-visited: #828282;
     --bg-color: #F4F4F4;
-    --secondary-bg-color: #F4F4F4;
+    --secondary-bg-color: #FAFAFA;
     --heading-color: #292922;
 }
 

@@ -56,13 +56,17 @@ export default {
 				const from = doc.querySelector('title').textContent
 
 				doc.querySelectorAll('item').forEach((item) => {
+					let url = item.querySelector('link').textContent
+					const test = url.indexOf('?') > -1 ? console.log('get') : console.log('')
+					url = url.indexOf('?') > -1 ? url.split('?')[0] : url
+
 					return this.posts.push({
-				        title: item.querySelector('title').textContent,
-				        from: from,
-				        postUrl: item.querySelector('link').textContent,
-				        description: item.querySelector('description').textContent.replace(/<img[^>]*>/g,"").replace(/h[0-9]/g, "span"),
-				        pubDate: item.querySelector('pubDate').textContent,
-			      	})
+						title: item.querySelector('title').textContent,
+						from: from,
+						postUrl: url,
+						description: item.querySelector('description').textContent.replace(/<img[^>]*>/g,"").replace(/h[0-9]/g, "span"),
+						pubDate: item.querySelector('pubDate').textContent,
+					})
 				})
 			})
 			.then(()=>(this.loading = false))
