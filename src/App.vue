@@ -29,32 +29,36 @@ export default {
 :root {
     --primary-color: #42b883;
     --secondary-color: #35495e;
-    --font-color: #424242;
-    --font-color-visited: #828282;
+
     --bg-color: #fff;
     --secondary-bg-color: #FAFAFA;
-    --heading-color: #292922;
 
     --font-color-primary: hsl(0, 0%, 13%);
     --font-color-secondary: hsl(0, 0%, 29%);
     --font-color-tertiary: hsl(0, 0%, 45%);
+
+    --font-color-visited: #828282;
 }
 
 .dark-theme {
-    --primary-color: #42b883;
+	--primary-color: #42b883;
     --secondary-color: #818cab;
-    --font-color: #e1e1ff;
-    --font-color-visited: rgb(169, 169, 179);;
+
     --bg-color: #181E24;
     --secondary-bg-color: #1F2831;
-    --heading-color: #818cab;
+
+    --font-color-primary: #fff;
+    --font-color-secondary: #e1e1ff;
+    --font-color-tertiary: #e1e1ff;
+
+    --font-color-visited: rgb(169, 169, 179);
 }
 
 #app {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	color: var(--font-color);
+	color: var(--font-color-primary);
 	background-color: var(--bg-color);
 	min-height: 100vh;
 }
