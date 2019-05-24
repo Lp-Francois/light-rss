@@ -31,11 +31,14 @@ export default {
     --secondary-color: #35495e;
     --font-color: #424242;
     --font-color-visited: #828282;
-    --bg-color: #F4F4F4;
+    --bg-color: #fff;
     --secondary-bg-color: #FAFAFA;
     --heading-color: #292922;
-}
 
+    --font-color-primary: hsl(0, 0%, 13%);
+    --font-color-secondary: hsl(0, 0%, 29%);
+    --font-color-tertiary: hsl(0, 0%, 45%);
+}
 
 .dark-theme {
     --primary-color: #42b883;

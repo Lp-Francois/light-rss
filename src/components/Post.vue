@@ -41,7 +41,15 @@ export default {
 }
 
 .title-link, .title-link:hover {
-	color: var(--font-color);
+	color: var(--font-color-primary);
+}
+
+p {
+	color: var(--font-color-secondary);
+}
+
+i {
+	color: var(--font-color-tertiary);
 }
 
 a:visited {

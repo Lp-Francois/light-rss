@@ -1,8 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
-
 import './../node_modules/spectre.css/dist/spectre.min.css';
 
+import Vue from 'vue'
+import App from './App.vue'
 
 Vue.config.productionTip = false
 
