@@ -5,11 +5,12 @@
 				<img class="logo" alt="logo" src=".././assets/vue-rss.png">
 			</a>
 			<h4 class="title">Light-rss</h4>
-
-			<label class="switch" v-on:click="toggle">
-				<input type="checkbox">
-				<span class="slider round"></span>
-			</label>
+		
+			<svg class="theme-toggler" v-on:click="themeToggle" width="26" height="26" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+				3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+				13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+			</svg>
 		</nav>
 	</header>
 </template>
@@ -23,27 +24,22 @@ export default {
 		}
 	},
 	mounted: function() {
-		const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-		const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+		const getTheme = window.localStorage && window.localStorage.getItem("theme");
+		const themeToggle = document.querySelector(".theme-toggle");
+		const isDark = getTheme === "dark";
 
-		if (currentTheme) {
-		    document.documentElement.setAttribute('data-theme', currentTheme);
-
-		    if (currentTheme === 'dark') {
-		        toggleSwitch.checked = true;
-		    }
+		if (getTheme !== null) {
+			document.body.classList.toggle("dark-theme", isDark);
 		}
 	},
 	methods: {
-		toggle: function(e) {
-			if (e.target.checked) {
-		        document.documentElement.setAttribute('data-theme', 'dark');
-		        localStorage.setItem('theme', 'dark');
-		    }
-		    else {
-		        document.documentElement.setAttribute('data-theme', 'light');
-		        localStorage.setItem('theme', 'light');
-		    }
+		themeToggle: function(e) {
+			document.body.classList.toggle("dark-theme");
+
+			window.localStorage && window.localStorage.setItem(
+				"theme",
+				document.body.classList.contains("dark-theme") ? "dark" : "light",
+			);
 		}
 	}
 }
@@ -75,6 +71,13 @@ export default {
 	margin-top: 7px;
 }
 
+svg {
+	fill: currentColor;
+}
+
+.theme-toggler {
+	cursor: pointer;
+}
 
 /* Switch Checkbox*/
  /* The switch - the box around the slider */

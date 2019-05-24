@@ -36,7 +36,8 @@ export default {
     --heading-color: #292922;
 }
 
-[data-theme="dark"] {
+
+.dark-theme {
     --primary-color: #42b883;
     --secondary-color: #818cab;
     --font-color: #e1e1ff;
