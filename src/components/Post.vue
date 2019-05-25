@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .post {
-	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 	padding: 1rem;
 	border-radius: 5px;
 }
