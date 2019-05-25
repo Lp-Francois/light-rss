@@ -51,6 +51,7 @@ export default {
 	background-color: var(--secondary-bg-color);
 	margin-bottom: 15px;
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.13);
+	border-top: 4px solid var(--primary-color);
 }
 
 .nav-header {

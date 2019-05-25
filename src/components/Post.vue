@@ -35,6 +35,7 @@ export default {
 	box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 	padding: 1rem;
 	border-radius: 5px;
+	margin-bottom: 0.3rem;
 }
 
 .post p {
