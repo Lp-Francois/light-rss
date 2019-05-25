@@ -4,7 +4,7 @@
 			<a href="https://github.com/AsterYujano/light-rss">
 				<img class="logo" alt="logo" src=".././assets/vue-rss.png">
 			</a>
-			<h4 class="title">Light-rss</h4>
+			<h4 class="title">Light-RSS</h4>
 		
 			<svg class="theme-toggler" v-on:click="themeToggle" width="26" height="26" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
@@ -73,6 +73,7 @@ export default {
 
 svg {
 	fill: currentColor;
+	margin-right: 0.5rem;
 }
 
 .theme-toggler {

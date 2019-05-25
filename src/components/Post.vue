@@ -31,6 +31,12 @@ export default {
 </script>
 
 <style scoped>
+.post {
+	box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+	padding: 1rem;
+	border-radius: 5px;
+}
+
 .post p {
 	margin-bottom: 0;
 	font-size: .7rem;
