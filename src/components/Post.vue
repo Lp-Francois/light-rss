@@ -26,8 +26,8 @@ export default {
 	},
 	filters: {
 		dateFormat: function(date) {
-			const new_date = new Date(date).toString()
-			return new_date.slice(0, new_date.lastIndexOf(":"));
+			return new Date(date).toUTCString();
+			//new_date.slice(0, new_date.lastIndexOf(":"));
 		}
 	}
 }
