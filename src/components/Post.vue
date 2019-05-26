@@ -5,10 +5,9 @@
 		</a>
 		<i> ({{ from }})</i>
 		<br>
-		<i class="i-date">{{ pubDate }}</i>
+		<i class="i-date">{{ pubDate | dateFormat }}</i>
 		<br>
 		<p v-html="description"></p>
-		<a :href="postUrl" target="_blank">Read more</a>
 	</div>
 </template>
 
@@ -16,9 +15,7 @@
 export default {
 	name: 'Post',
 	data() {
-		return {
-			
-		}
+		return {}
 	},
 	props: {
 		title: String,
@@ -26,11 +23,17 @@ export default {
 		postUrl: String,
 		pubDate: String,
 		from: String
+	},
+	filters: {
+		dateFormat: function(date) {
+			const new_date = new Date(date).toString()
+			return new_date.slice(0, new_date.lastIndexOf(":"));
+		}
 	}
 }
 </script>
 
-<style scoped>
+<style>
 .post {
 	box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
 	padding: 1rem;
@@ -41,6 +44,7 @@ export default {
 .post p {
 	margin-bottom: 0;
 	font-size: .7rem;
+	color: var(--font-color-secondary);
 }
 
 .post .i-date {
@@ -51,11 +55,7 @@ export default {
 	color: var(--font-color-primary);
 }
 
-p {
-	color: var(--font-color-secondary);
-}
-
-i {
+.post i {
 	color: var(--font-color-tertiary);
 }
 

@@ -1,12 +1,12 @@
 <template>
 	<div>
 		<footer class="footer">
-			<nav class="container grid-lg nav-footer">
-				<a href="https://github.com/AsterYujano/light-rss">Source code</a>
-
+			<nav class="container grid-lg nav-footer">	
 				<a href="https://github.com/AsterYujano/light-rss">
 					<img class="logo" alt="logo" src=".././assets/vue-rss.png">
 				</a>
+
+				<a href="https://github.com/AsterYujano/light-rss">Source code</a>
 			</nav>
 		</footer>
 	</div>
@@ -41,7 +41,7 @@ export default {
 .logo {
 	width: 30px;
 	height: 30px;
-	margin-right: 15px;
+	margin-left: 15px;
 	margin-top: 7px;
 }
 </style>

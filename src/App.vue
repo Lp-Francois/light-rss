@@ -66,4 +66,8 @@ export default {
 a {
 	color: var(--primary-color);
 }
+
+a:hover, a:clicked {
+	color: var(--secondary-color);
+}
 </style>
