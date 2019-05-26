@@ -6,6 +6,7 @@
 		"https://www.bleepingcomputer.com/feed/",
 		"https://feeds.feedburner.com/CiscoBlogSecurity?format=xml",
 		"https://nakedsecurity.sophos.com/feed/",
-		"https://www.theregister.co.uk/security/headlines.atom"
+		"https://www.theregister.co.uk/security/headlines.atom",
+		"https://devopssec.fr/rss.xml"
 	]
 }
