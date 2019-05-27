@@ -35,7 +35,7 @@ export default {
 
 <style>
 .post {
-	box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+	box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.1);
 	padding: 1rem;
 	border-radius: 5px;
 	margin-bottom: 0.3rem;
