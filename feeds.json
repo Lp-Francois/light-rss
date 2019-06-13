@@ -7,7 +7,6 @@
 		"https://feeds.feedburner.com/CiscoBlogSecurity?format=xml",
 		"https://nakedsecurity.sophos.com/feed/",
 		"https://www.theregister.co.uk/security/headlines.atom",
-		"https://devopssec.fr/rss.xml",
-		"https://danielmiessler.com/feed/"
+		"https://devopssec.fr/rss.xml"
 	]
 }
