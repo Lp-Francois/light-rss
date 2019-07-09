@@ -1,6 +1,6 @@
 <template>
 	<div class="post">
-		<a class="title-link" :href="postUrl" target="_blank">
+		<a class="title-link" :href="postUrl">
 			<strong>{{ title }}</strong>
 		</a>
 		<i> ({{ from }})</i>
