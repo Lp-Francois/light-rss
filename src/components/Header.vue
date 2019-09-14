@@ -33,7 +33,7 @@ export default {
 		}
 	},
 	methods: {
-		themeToggle: function(e) {
+		themeToggle: function() {
 			document.body.classList.toggle("dark-theme");
 
 			window.localStorage && window.localStorage.setItem(

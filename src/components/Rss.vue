@@ -2,7 +2,7 @@
 	<div class="rss columns">
 		<div v-show="loading" class="column col-12 centered loading loading-lg"></div>
 		
-		<div class="column col-12" v-for="post in sortedPosts" >
+		<div class="column col-12" v-for="(post, index) in sortedPosts" :key="index">
 			<Post 
 			:postUrl=post.postUrl 
 			:title=post.title
@@ -37,12 +37,12 @@ export default {
 		})
 	},
 	computed: {
-	    sortedPosts: function() {
-	        this.posts.sort( ( a, b) => {
-	            return new Date(b.pubDate) - new Date(a.pubDate);
-	        });
-	        return this.posts;
-	    }
+		sortedPosts: function() {
+			this.posts.slice().sort( ( a, b) => {
+				return new Date(b.pubDate) - new Date(a.pubDate);
+			});
+			return this.posts;
+		}
 	},
 	methods: {
 		rssFetch: function (url) {
